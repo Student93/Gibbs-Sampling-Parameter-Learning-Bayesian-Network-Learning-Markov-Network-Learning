@@ -8,8 +8,6 @@
 #include <math.h>
 #include <queue>
 #include <random>
-
-
 using namespace std;
 
 map<char, int> mapping;
@@ -68,8 +66,6 @@ int main(){
 		getline(fileOCR,temp);
 		strcpy(temp1, temp.c_str());
 
-		
-
 		c = strtok(temp1,"\t");
 		while(c!=NULL){
 
@@ -114,12 +110,8 @@ int main(){
 			c  = strtok(NULL,"\t");
 			
 		}
-
-		
 		
 	}
-
-
 
 	// start reading file
 
@@ -167,7 +159,6 @@ int main(){
 
 		}
 
-
 		getline(file,temp);
 
 
@@ -180,21 +171,15 @@ int main(){
 			
 			c  = strtok(NULL,"\t");
 			
-
 		}
-
 
 		getline(file,temp);
 		getline(fileTruth,temp);
 		
 		totalVar = n1 + n2;
 
-
 		vector<vector<int> > samples;
 		vector<int> tempPrev(totalVar);
-
-		
-
 		for(int i=0;i<totalVar;i++){
 
 			tempPrev[i] = dis(gen);
@@ -228,7 +213,6 @@ int main(){
 
 							factor[tempSample[j]] *= 5;
 						}
-
 					}
 
 					for(int j=i+1;j<n1;j++){
@@ -238,8 +222,6 @@ int main(){
 
 							factor[tempPrev[j]] *= 5;
 						}
-
-
 
 					}
 					// add trans factor
@@ -262,9 +244,6 @@ int main(){
 							factor[tempPrev[j+n1]] *= 5;
 						}
 					}
-
-
-
 
 				}else{
 
@@ -294,8 +273,6 @@ int main(){
 							factor[tempPrev[j]] *= 5;
 						}
 
-
-
 					}
 					// add trans factor
 					if(i!=totalVar-1){
@@ -320,16 +297,8 @@ int main(){
 
 					}
 
-					
-
-
-
-
-
 				}
 
-
-				
 				double z = 0.0;
 
 				for(int j=0;j<10;j++){
@@ -357,12 +326,7 @@ int main(){
 						break;
 					}
 
-
 				}
-				
-			
-
-
 
 			}
 
@@ -373,16 +337,7 @@ int main(){
 
 			samples.push_back(tempSample);
 
-
-
-		
-
-
-
 		}
-
-		//int samples_len = samples.size();
-		//cout<<samples_len<<"\n";
 		
 		double currDLL = 1.0;
 		vector<int> assignment(totalVar);
